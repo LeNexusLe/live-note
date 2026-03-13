@@ -1,10 +1,6 @@
 {
   "folders": [
     {
-      "name": "root",
-      "path": "."
-    },
-    {
       "name": "server",
       "path": "server"
     },
@@ -15,6 +11,10 @@
     {
       "name": "shared",
       "path": "shared"
-    }
+    },
+    {
+      "name": "root",
+      "path": "."
+    },
   ],
 }
