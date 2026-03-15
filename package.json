@@ -37,7 +37,6 @@
     "hono": "^4.12.7"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.6",
     "bun-types": "latest",
     "oxfmt": "^0.40.0",
     "oxlint": "^1.55.0",
