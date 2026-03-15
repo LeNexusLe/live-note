@@ -2,10 +2,17 @@
   "name": "live-note",
   "version": "0.5.1",
   "description": "A monorepo template built with Bun, Hono, Vite, and React",
-  "author": "Steve Simkins",
-  "license": "MIT",
+  "keywords": [
+    "bun",
+    "hono",
+    "monorepo",
+    "react",
+    "turbo",
+    "vite"
+  ],
   "homepage": "https://github.com/stevedylandev/bhvr",
-  "packageManager": "bun@1.2.4",
+  "license": "MIT",
+  "author": "Steve Simkins",
   "workspaces": [
     "./server",
     "./client",
@@ -18,29 +25,25 @@
     "build": "turbo build",
     "build:client": "turbo build --filter=client",
     "build:server": "turbo build --filter=server",
-    "lint": "biome lint .",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
     "type-check": "turbo type-check",
     "test": "turbo test",
     "postinstall": "turbo build --filter=shared --filter=server",
-    "format": "biome format . --write"
+    "format": "oxfmt",
+    "format:check": "oxfmt --check"
   },
-  "keywords": [
-    "bun",
-    "hono",
-    "react",
-    "vite",
-    "monorepo",
-    "turbo"
-  ],
+  "dependencies": {
+    "hono": "^4.12.7"
+  },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.6",
     "bun-types": "latest",
+    "oxfmt": "^0.40.0",
+    "oxlint": "^1.55.0",
     "turbo": "^2.6.3"
   },
   "peerDependencies": {
     "typescript": "^5.8.3"
   },
-  "dependencies": {
-    "hono": "^4.12.7"
-  }
+  "packageManager": "bun@1.2.4"
 }
