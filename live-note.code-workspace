@@ -2,19 +2,19 @@
   "folders": [
     {
       "name": "server",
-      "path": "server"
+      "path": "server",
     },
     {
       "name": "client",
-      "path": "client"
+      "path": "client",
     },
     {
       "name": "shared",
-      "path": "shared"
+      "path": "shared",
     },
     {
       "name": "root",
-      "path": "."
+      "path": ".",
     },
   ],
 }
