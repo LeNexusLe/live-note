@@ -89,7 +89,9 @@ app.get('/hello', async c => {
     success: true,
   };
 
-  return c.json(data, { status: 200 });
+  return c.json(data, {
+    status: 200,
+  });
 });
 
 export default app;

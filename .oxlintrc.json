@@ -13,7 +13,13 @@
     "typescript/no-non-null-asserted-nullish-coalescing": "error",
     "typescript/no-require-imports": "error",
     "typescript/prefer-literal-enum-member": "error",
-    "typescript/array-type": ["error", { "default": "array-simple", "readonly": "array-simple" }],
+    "typescript/array-type": [
+      "error",
+      {
+        "default": "array-simple",
+        "readonly": "array-simple"
+      }
+    ],
     "typescript/prefer-for-of": "error",
     "react/jsx-key": "error",
     "react/jsx-no-duplicate-props": "error",
@@ -113,7 +119,13 @@
     "constructor-super": "error",
     "curly": ["error", "all"],
     "default-case-last": "error",
-    "eqeqeq": ["error", "always", { "null": "ignore" }],
+    "eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
     "for-direction": "error",
     "getter-return": "error",
     "no-alert": "error",
