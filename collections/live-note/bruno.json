@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "live-note",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
