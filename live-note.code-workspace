@@ -2,15 +2,15 @@
   "folders": [
     {
       "name": "server",
-      "path": "server",
+      "path": "apps/server",
     },
     {
-      "name": "client",
-      "path": "client",
+      "name": "web",
+      "path": "apps/web",
     },
     {
       "name": "shared",
-      "path": "shared",
+      "path": "apps/shared",
     },
     {
       "name": "root",

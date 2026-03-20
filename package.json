@@ -14,16 +14,16 @@
   "license": "MIT",
   "author": "Steve Simkins",
   "workspaces": [
-    "./server",
-    "./client",
-    "./shared"
+    "./apps/server",
+    "./apps/web",
+    "./apps/shared"
   ],
   "scripts": {
     "dev": "turbo dev",
-    "dev:client": "turbo dev --filter=client",
+    "dev:client": "turbo dev --filter=web",
     "dev:server": "turbo dev --filter=server",
     "build": "turbo build",
-    "build:client": "turbo build --filter=client",
+    "build:client": "turbo build --filter=web",
     "build:server": "turbo build --filter=server",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
@@ -40,7 +40,7 @@
     "bun-types": "latest",
     "oxfmt": "^0.40.0",
     "oxlint": "^1.55.0",
-    "turbo": "^2.6.3"
+    "turbo": "2"
   },
   "peerDependencies": {
     "typescript": "^5.8.3"
