@@ -52,19 +52,6 @@
       "outputs": [".eslintcache"],
       "env": ["NODE_ENV"]
     },
-    "type-check": {
-      "dependsOn": ["^build"],
-      "inputs": [
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "src/**/*.d.ts",
-        "tsconfig.json",
-        "tsconfig.*.json",
-        "package.json"
-      ],
-      "outputs": ["dist/**/*.d.ts", ".tsbuildinfo"],
-      "env": ["NODE_ENV"]
-    },
     "test": {
       "dependsOn": ["^build"],
       "inputs": [

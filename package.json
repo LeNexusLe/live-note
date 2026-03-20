@@ -10,9 +10,6 @@
     "turbo",
     "vite"
   ],
-  "homepage": "https://github.com/stevedylandev/bhvr",
-  "license": "MIT",
-  "author": "Steve Simkins",
   "workspaces": [
     "./apps/server",
     "./apps/web",
@@ -25,11 +22,10 @@
     "build": "turbo build",
     "build:client": "turbo build --filter=web",
     "build:server": "turbo build --filter=server",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
-    "type-check": "turbo type-check",
     "test": "turbo test",
     "postinstall": "turbo build --filter=shared --filter=server",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
     "format": "oxfmt",
     "format:check": "oxfmt --check"
   },
@@ -40,6 +36,7 @@
     "bun-types": "latest",
     "oxfmt": "^0.40.0",
     "oxlint": "^1.55.0",
+    "oxlint-tsgolint": "^0.17.1",
     "turbo": "2"
   },
   "peerDependencies": {

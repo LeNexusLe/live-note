@@ -1,0 +1,7 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/dockerfile
+    ports:
+      - '3000:3000'
