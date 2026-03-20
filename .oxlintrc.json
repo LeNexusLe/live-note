@@ -4,6 +4,10 @@
   "env": {},
   "globals": {},
   "settings": {},
+  "options": {
+    "typeAware": true,
+    "typeCheck": true
+  },
   "rules": {
     "typescript/no-unused-vars": "error",
     "typescript/prefer-nullish-coalescing": "error",
