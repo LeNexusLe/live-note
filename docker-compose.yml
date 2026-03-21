@@ -5,3 +5,11 @@ services:
       dockerfile: apps/web/dockerfile
     ports:
       - '3000:3000'
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: live-note
+    ports:
+      - '5432:5432'
