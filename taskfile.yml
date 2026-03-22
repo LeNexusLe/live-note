@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+version: '3'
+vars:
+tasks:
+  server:start:
+    aliases: ['server:dev', 'server']
+    desc: Starts docker containers, applies database migrations, and runs the development server
+    cmds:
+      - defer: docker compose stop db
+      - docker compose up db -d
+      - bun run --filter=server db:push
+      - bun run dev:server
