@@ -6,4 +6,7 @@ app.get('/health', async c => {
   return c.json('ok', 200);
 });
 
-export default app;
+export default {
+  port: 5000,
+  fetch: app.fetch,
+};
