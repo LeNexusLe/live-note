@@ -1,4 +1,10 @@
-export type ApiResponse = {
+// oxlint-disable typescript/ban-types
+
+export type SuccessResponse<T = void> = {
   message: string;
-  success: true;
+  data?: T;
+} & (T extends void ? {} : { data: T });
+
+export type ErrorResponse = {
+  error: string;
 };
