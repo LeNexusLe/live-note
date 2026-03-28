@@ -10,12 +10,12 @@ export const app = new Hono<{ Variables: Variables }>();
 
 app.use(requestId());
 app.use(loggerHandler());
+app.onError(errorHandler());
 
 app.get('/health', async c => {
   return c.json('ok', 200);
 });
 app.basePath('/api/v1').route('/auth', authRoutes);
-app.onError(errorHandler);
 
 export default {
   port: 5000,

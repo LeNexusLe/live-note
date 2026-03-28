@@ -5,23 +5,25 @@ import type { ErrorResponse } from 'shared';
 import type { Variables } from '../client';
 import { env } from '../env';
 
-export const errorHandler: ErrorHandler<{ Variables: Variables }> = (error, context) => {
-  if (error instanceof HTTPException) {
-    const status = error.status;
-    const logMethod = status >= 500 ? 'error' : 'warn';
+export const errorHandler = (): ErrorHandler<{ Variables: Variables }> => {
+  return async (error, context) => {
+    if (error instanceof HTTPException) {
+      const status = error.status;
+      const logMethod = status >= 500 ? 'error' : 'warn';
 
-    context.var.log[logMethod]({ err: error }, error.message);
+      context.var.log[logMethod]({ err: error }, error.message);
 
-    return error.res ?? context.json<ErrorResponse>({ message: error.message }, status);
-  }
+      return error.res ?? context.json<ErrorResponse>({ message: error.message }, status);
+    }
 
-  context.var.log.error({ err: error }, 'Unhandled error occurred');
+    context.var.log.error({ err: error }, 'Unhandled error occurred');
 
-  return context.json<ErrorResponse>(
-    {
-      message:
-        env.NODE_ENV === 'production' ? 'Internal Server Error' : (error.stack ?? error.message),
-    },
-    500,
-  );
+    return context.json<ErrorResponse>(
+      {
+        message:
+          env.NODE_ENV === 'production' ? 'Internal Server Error' : (error.stack ?? error.message),
+      },
+      500,
+    );
+  };
 };
