@@ -31,17 +31,17 @@
   },
   "dependencies": {
     "@hono/zod-validator": "^0.7.6",
-    "hono": "^4.12.9"
+    "hono": "^4.12.7"
   },
   "devDependencies": {
     "bun-types": "latest",
     "oxfmt": "^0.40.0",
-    "oxlint": "^1.57.0",
-    "oxlint-tsgolint": "^0.17.4",
-    "turbo": "^2.8.20"
+    "oxlint": "^1.55.0",
+    "oxlint-tsgolint": "^0.17.1",
+    "turbo": "2"
   },
   "peerDependencies": {
-    "typescript": "^5.9.3"
+    "typescript": "^5.8.3"
   },
   "packageManager": "bun@1.2.4"
 }

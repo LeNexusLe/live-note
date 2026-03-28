@@ -6,5 +6,6 @@ export type SuccessResponse<T = void> = {
 } & (T extends void ? {} : { data: T });
 
 export type ErrorResponse = {
-  error: string;
+  message: string;
+  errors?: Record<string, string>;
 };

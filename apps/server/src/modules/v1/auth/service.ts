@@ -11,6 +11,7 @@ export const authService = {
   registerUser: async (payload: RegisterPayload) => {
     try {
       const passwordHash = await Bun.password.hash(payload.password);
+
       await db.insert(usersTable).values({
         name: payload.name,
         passwordHash,
@@ -25,7 +26,6 @@ export const authService = {
         throw new HTTPException(409, { message: 'User already exists' });
       }
 
-      console.error('Error registering user:', error);
       throw new HTTPException(500, { message: 'Failed to register an user', cause: error });
     }
   },
@@ -48,7 +48,7 @@ export const authService = {
       if (error instanceof HTTPException) {
         throw error;
       }
-      console.error('Error logging in user:', error);
+
       throw new HTTPException(500, { message: 'Failed to log in user', cause: error });
     }
   },
