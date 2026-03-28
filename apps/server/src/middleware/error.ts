@@ -12,14 +12,14 @@ export const errorHandler: ErrorHandler<{ Variables: Variables }> = (error, cont
 
     context.var.log[logMethod]({ err: error }, error.message);
 
-    return error.res ?? context.json<ErrorResponse>({ error: error.message }, status);
+    return error.res ?? context.json<ErrorResponse>({ message: error.message }, status);
   }
 
   context.var.log.error({ err: error }, 'Unhandled error occurred');
 
   return context.json<ErrorResponse>(
     {
-      error:
+      message:
         env.NODE_ENV === 'production' ? 'Internal Server Error' : (error.stack ?? error.message),
     },
     500,
