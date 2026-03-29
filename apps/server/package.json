@@ -16,6 +16,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "bun --watch run src/index.ts && tsc --watch",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:check": "drizzle-kit check",
