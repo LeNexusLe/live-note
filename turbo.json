@@ -53,7 +53,34 @@
       "env": ["NODE_ENV"]
     },
     "test": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^test"],
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.js",
+        "src/**/*.jsx",
+        "test/**/*.ts",
+        "test/**/*.tsx",
+        "test/**/*.js",
+        "test/**/*.jsx",
+        "__tests__/**/*.ts",
+        "__tests__/**/*.tsx",
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+        "jest.config.*",
+        "vitest.config.*",
+        "package.json",
+        "tsconfig.json",
+        "tsconfig.*.json"
+      ],
+      "outputs": ["coverage/**", ".nyc_output/**", "test-results/**"],
+      "env": ["NODE_ENV", "CI"]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true,
       "inputs": [
         "src/**/*.ts",
         "src/**/*.tsx",
@@ -84,6 +111,7 @@
     "**/.env.*",
     "**/.env.local",
     "**/.env.*.local",
+    "**/.env.test",
     ".gitignore",
     "turbo.json",
     "package.json",
