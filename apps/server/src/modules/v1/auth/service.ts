@@ -5,6 +5,7 @@ import postgres from 'postgres';
 import { db } from '../../../db/adapter';
 import { usersTable } from '../../../db/schemas/users';
 
+import { authQuery } from './query';
 import type { LoginPayload, RegisterPayload } from './types';
 
 export const authService = {
@@ -12,11 +13,7 @@ export const authService = {
     try {
       const passwordHash = await Bun.password.hash(payload.password);
 
-      await db.insert(usersTable).values({
-        name: payload.name,
-        passwordHash,
-        email: payload.email,
-      });
+      await authQuery.insertUser({ ...payload, passwordHash });
     } catch (error) {
       if (
         error instanceof DrizzleQueryError &&

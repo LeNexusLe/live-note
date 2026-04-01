@@ -23,6 +23,7 @@
     "build:client": "turbo build --filter=web",
     "build:server": "turbo build --filter=server",
     "test": "turbo test",
+    "test:watch": "turbo test:watch",
     "postinstall": "turbo build --filter=shared --filter=server",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",

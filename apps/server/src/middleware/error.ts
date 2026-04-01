@@ -2,8 +2,8 @@ import { type ErrorHandler } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import type { ErrorResponse } from 'shared';
 
-import type { Variables } from '../client';
 import { env } from '../env';
+import type { Variables } from '../types';
 
 export const errorHandler = (): ErrorHandler<{ Variables: Variables }> => {
   return async (error, context) => {
