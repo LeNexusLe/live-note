@@ -12,9 +12,7 @@ app.use(requestId());
 app.use(loggerHandler());
 app.onError(errorHandler());
 
-app.get('/health', async c => {
-  return c.json('ok', 200);
-});
+app.get('/health', c => c.json('ok', 200));
 app.basePath('/api/v1').route('/auth', authRoutes);
 
 export default {
