@@ -2,10 +2,10 @@ import type { MiddlewareHandler } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import { verify } from 'hono/jwt';
 
-import { env } from '../env';
-import type { Variables } from '../types';
+import { env } from '@/env';
+import type { ProtectedVariables } from '@/types';
 
-export const authHandler = (): MiddlewareHandler<{ Variables: Variables }> => {
+export const authHandler = (): MiddlewareHandler<{ Variables: ProtectedVariables }> => {
   return async (context, next) => {
     const authHeader = context.req.header('Authorization');
 

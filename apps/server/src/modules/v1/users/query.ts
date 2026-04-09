@@ -1,7 +1,7 @@
 import { eq } from 'drizzle-orm';
 
-import { db } from '../../../db/adapter';
-import { usersTable } from '../../../db/schemas/users';
+import { db } from '@/db/adapter';
+import { usersTable } from '@/db/schemas/users';
 
 export const usersQuery = {
   getUser: async (userId: string) => {

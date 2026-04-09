@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 
-import { authHandler } from '../../../middleware/auth';
-import type { ProtectedVariables } from '../../../types';
+import { authHandler } from '@/middleware/auth';
+import type { ProtectedVariables } from '@/types';
 
 import { usersService } from './service';
 
