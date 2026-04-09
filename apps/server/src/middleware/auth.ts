@@ -21,7 +21,7 @@ export const authHandler = (): MiddlewareHandler<{ Variables: Variables }> => {
 
     try {
       const payload = await verify(token, env.JWT_SECRET, { alg: 'HS256' });
-      context.set('user', payload);
+      context.set('userId', payload.sub as string);
     } catch (error) {
       throw new HTTPException(401, { message: 'Unauthorized', cause: error });
     }

@@ -6,7 +6,11 @@ export type Db = typeof db;
 
 export type Variables = {
   log: pino.Logger;
-  user: Record<string, unknown>;
+};
+
+export type ProtectedVariables = {
+  log: pino.Logger;
+  userId: string;
 };
 
 export type ServiceContext = {
