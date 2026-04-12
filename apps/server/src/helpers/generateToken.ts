@@ -1,6 +1,6 @@
 import { sign } from 'hono/jwt';
 
-import { env } from '../env';
+import { env } from '@/env';
 
 export const generateToken = async (userId: string) => {
   const now = Math.floor(Date.now() / 1000);

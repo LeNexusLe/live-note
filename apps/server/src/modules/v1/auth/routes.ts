@@ -1,9 +1,9 @@
 import { Hono } from 'hono';
 import { setCookie } from 'hono/cookie';
 
-import { generateToken } from '../../../helpers/generateToken';
-import { validateRequest } from '../../../helpers/validateRequest';
-import type { Variables } from '../../../types';
+import { generateToken } from '@/helpers/generateToken';
+import { validateRequest } from '@/helpers/validateRequest';
+import type { Variables } from '@/types';
 
 import { loginUserSchema, registerUserSchema } from './schema';
 import { authService } from './service';

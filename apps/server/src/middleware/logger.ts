@@ -1,7 +1,7 @@
 import type { MiddlewareHandler } from 'hono';
 import pino from 'pino';
 
-import { env } from '../env';
+import { env } from '@/env';
 
 const log = pino({
   enabled: true,
