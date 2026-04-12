@@ -1,5 +1,5 @@
-import { db } from '../../../db/adapter';
-import { usersTable } from '../../../db/schemas/users';
+import { db } from '@/db/adapter';
+import { usersTable } from '@/db/schemas/users';
 
 import type { RegisterPayload } from './types';
 

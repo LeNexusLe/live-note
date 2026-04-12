@@ -10,6 +10,10 @@ tasks:
       - docker compose up db -d
       - bun run --filter=server db:push
       - bun run dev:server
+  db:studio:
+    desc: Starts drizzle studio
+    cmds:
+      - bun run --filter=server db:studio
   test:all:
     aliases: ['test']
     desc: Runs all tests in the project

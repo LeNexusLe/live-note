@@ -2,8 +2,8 @@ import { DrizzleQueryError, eq } from 'drizzle-orm';
 import { HTTPException } from 'hono/http-exception';
 import postgres from 'postgres';
 
-import { db } from '../../../db/adapter';
-import { usersTable } from '../../../db/schemas/users';
+import { db } from '@/db/adapter';
+import { usersTable } from '@/db/schemas/users';
 
 import { authQuery } from './query';
 import type { LoginPayload, RegisterPayload } from './types';
