@@ -17,6 +17,17 @@ body:json {
   }
 }
 
+script:post-response {
+  const cookies = res.headers['set-cookie'];
+  const tokenCookie = cookies.find(c => c && c.trim().startsWith('token='));
+  const token = tokenCookie?.split(';')[0]?.split('=')[1];
+  
+  
+  if (token) {
+    bru.setEnvVar('auth-token', token);
+  }
+}
+
 settings {
   encodeUrl: true
   timeout: 0
